@@ -1,3 +1,9 @@
+/*
+*Subnet Mask Calculator
+*developed by Vahn Cagalawan
+*/
+
+
 #include<stdio.h>
 #include<math.h>
 int prefix(int host)
@@ -41,11 +47,17 @@ void subnetmask(int x)
 }
 main()
 {
-    int x;
-    printf("VLSM by v4hn\n\nHosts: ");
+    int x, res;
+    printf("VLSM by v4hn\n");
+    do{
+    printf("\nHosts: ");
     scanf("%d",&x);
     printf("\nPN: /%d", prefix(x));
     subnetmask(prefix(x));
+    printf("\n\nOptions..\n  1 = Restart\n  0 = End\nInput(1/0) = ");
+    scanf("%d", &res);
+    }while(res==1);
+
 return 0;
 }
 
